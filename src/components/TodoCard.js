@@ -19,7 +19,7 @@ export default function TodoCard(props) {
           <input type="checkbox" className="todoCheckbox"></input>
           <div className="todoButton" onClick={handleCardClick}>{props.title}</div>
         </div>
-        <TodoDetails title={props.title} description={props.description} onDelete={handleDelete}></TodoDetails>
+        <TodoDetails title={props.title} description={props.description} onDelete={handleDelete} onClose={handleCardClick}></TodoDetails>
       </React.Fragment>
     )
   } else {

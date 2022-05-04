@@ -11,7 +11,7 @@
   font-size: 20px;
 }
 
-.todoHeader button {
+.createTodoButton {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +37,6 @@
   visibility: hidden;
 }
 
-.todoHeader button:hover .tooltip {
+.createTodo:hover .tooltip {
   visibility: visible;
 }

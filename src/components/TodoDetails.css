@@ -1,20 +1,27 @@
 .todoDetails {
-  display: flex;
-  flex-direction: column;
   position: absolute;
   top: 0;
-  left: 100%;
-  margin-left: 12px;
-  height: 40vh;
-  width: 15vw;
-  border-radius: 8px;
-  padding: 12px;
+  left: 102%;
   background-color: var(--secondary-grey);
 }
 
 .todoTitle {
   margin: 0;
   overflow-wrap: break-word;
+}
+
+.closeButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-image: url("../icons/close_button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 14px;
+  width: 14px;
+  border: none;
+  cursor: pointer;
 }
 
 .todoDescription {
