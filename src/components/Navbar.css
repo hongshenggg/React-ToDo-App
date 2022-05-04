@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: var(--main-grey);
+  color: white;
+  height: 4vh;
+  margin-bottom: 8vh;
+}
+
+.left-section {
+  font-size: 20px;
+  margin-left: 20px;
+}

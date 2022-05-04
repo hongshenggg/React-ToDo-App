@@ -1,0 +1,41 @@
+.todoDetails {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 12px;
+  height: 40vh;
+  width: 15vw;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: var(--secondary-grey);
+}
+
+.todoTitle {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.todoDescription {
+  overflow-y: auto;
+  padding: 10px;
+  flex: 1;
+}
+
+.deleteButton {
+  position: relative;
+  bottom: 0;
+  border: 2px solid var(--deleteButtonRed);
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  background-color: white;
+  color: var(--deleteButtonRed);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.deleteButton:hover {
+  background-color: var(--deleteButtonRed);
+  color: white;
+}

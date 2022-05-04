@@ -1,0 +1,12 @@
+.todoSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+  border-radius: 8px;
+  height: 40vh;
+  width: 15vw;
+  padding: 12px;
+  background-color: var(--main-orange);
+}
