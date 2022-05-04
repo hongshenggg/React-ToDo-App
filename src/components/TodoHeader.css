@@ -37,6 +37,6 @@
   visibility: hidden;
 }
 
-.createTodo:hover .tooltip {
+.createTodoButton:hover .tooltip {
   visibility: visible;
 }
