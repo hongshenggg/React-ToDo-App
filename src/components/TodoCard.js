@@ -14,13 +14,11 @@ export default function TodoCard(props) {
   
   if (props.isClicked) {
     return (
-      <React.Fragment>
         <div className="todoCard">
           <input type="checkbox" className="todoCheckbox"></input>
           <div className="todoButton" onClick={handleCardClick}>{props.title}</div>
+          <TodoDetails title={props.title} description={props.description} onDelete={handleDelete} onClose={handleCardClick}></TodoDetails>
         </div>
-        <TodoDetails title={props.title} description={props.description} onDelete={handleDelete} onClose={handleCardClick}></TodoDetails>
-      </React.Fragment>
     )
   } else {
     return (
