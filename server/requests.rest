@@ -1,0 +1,44 @@
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+  "name": "test",
+  "email": "test@test.com",
+  "password": "123456"
+}
+
+###
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "123456"
+}
+
+###
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzYyNGJiNTBhNTZiOTA0MjYyYmU2NyIsImlhdCI6MTY1MTkxMDQ3NywiZXhwIjoxNjU0NTAyNDc3fQ.X4Co4yTNv5VlV6KDtMRRGDMatSMWXq9s-XBb6V0C3nU
+
+{
+  "user": "627624bb50a56b904262be67",
+  "title": "test todo 1",
+  "description": "test description 1"
+}
+
+###
+PUT http://localhost:5000/api/todos/627628b450a56b904262be6b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzYyNGJiNTBhNTZiOTA0MjYyYmU2NyIsImlhdCI6MTY1MTkxMTcwOCwiZXhwIjoxNjU0NTAzNzA4fQ.VX35wuovAWqektP19mgMmBp10wsI0bfswfxZRb55rAI
+
+{
+  "user": "627624bb50a56b904262be67",
+  "title": "updated todo 1",
+  "description": "updated todo 1 description"
+}
+
+###
+DELETE http://localhost:5000/api/todos/627628b450a56b904262be6b 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzYyNGJiNTBhNTZiOTA0MjYyYmU2NyIsImlhdCI6MTY1MTkxMTcwOCwiZXhwIjoxNjU0NTAzNzA4fQ.VX35wuovAWqektP19mgMmBp10wsI0bfswfxZRb55rAI

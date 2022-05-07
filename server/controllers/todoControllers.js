@@ -1,11 +1,13 @@
-const todoModel = require('../models/todoModel');
+const Todo = require('../models/todoModel');
+const User = require('../models/userModel');
 
 async function createTodo(req, res) {
   if (!req.body.title) {
     res.status(400);
     throw new Error('Please input a title for the todo');
   }
-  const todo = await todoModel.create({
+  const todo = await Todo.create({
+    user: req.user.id,
     title: req.body.title,
     description: req.body.description
   });
@@ -14,30 +16,50 @@ async function createTodo(req, res) {
 }
 
 async function readTodos(req, res) {
-  const todos = await todoModel.find(); 
+  const todos = await Todo.find({user: req.user.id});
   res.status(200).json(todos);
 }
 
 async function updateTodo(req,res) {
-  const todo = await todoModel.findById(req.params.id);
+  const todo = await Todo.findById(req.params.id);
   if (!todo) {
     res.status(400);
     throw new Error('Todo not found');
   }
-
-  const updatedTodo = await todoModel.findByIdAndUpdate(req.params.id,
+  const user = await User.findById(req.user.id);
+  // Check for user
+  if (!user) {
+    res.status(401);
+    throw new Error('User not found');
+  }
+  // Make sure the logged in user matches the todo user
+  if (todo.user.toString() !== user.id) {
+    res.status(401);
+    throw new Error('User not authorized');
+  }
+  const updatedTodo = await Todo.findByIdAndUpdate(req.params.id,
     req.body, {new: true});
 
   res.status(200).json(updatedTodo);
 }
 
 async function deleteTodo(req,res) {
-  const todo = await todoModel.findById(req.params.id);
+  const todo = await Todo.findById(req.params.id);
   if (!todo) {
     res.status(400);
     throw new Error('Todo not found');
   }
-
+  const user = await User.findById(req.user.id);
+  // Check for user
+  if (!user) {
+    res.status(401);
+    throw new Error('User not found');
+  }
+  // Make sure the logged in user matches the todo user
+  if (todo.user.toString() !== user.id) {
+    res.status(401);
+    throw new Error('User not authorized');
+  }
   await todo.remove();
   res.status(200).json({id: req.params.id});
 }
