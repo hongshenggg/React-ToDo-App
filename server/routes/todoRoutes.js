@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const asyncHandler = require('express-async-handler');
 const {
   createTodo, 
   readTodos, 
@@ -8,7 +9,7 @@ const {
 } = require('../controllers/todoControllers');
 const protect = require('../middleware/authMiddleware');
 
-router.route('/').get(protect, readTodos).post(protect, createTodo);
-router.route('/:id').put(protect, updateTodo).delete(protect, deleteTodo);
+router.route('/').get(asyncHandler(protect), asyncHandler(readTodos)).post(asyncHandler(protect), asyncHandler(createTodo));
+router.route('/:id').put(asyncHandler(protect), asyncHandler(updateTodo)).delete(asyncHandler(protect), asyncHandler(deleteTodo));
 
 module.exports = router;

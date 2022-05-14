@@ -1,18 +1,17 @@
 .todoCard {
   display: flex;
   align-items: center;
-  height: 5vh;
+  height: 50px;
 }
 
 .todoButton {
-  line-height: 5vh;
+  line-height: 50px;
   border: 2px solid var(--secondary-grey);
   border-radius: 8px;
   width: 100%;
   height: inherit;
   cursor: pointer;
   padding-left: 12px;
-  flex-wrap: wrap;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

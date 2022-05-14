@@ -12,7 +12,7 @@
 }
 
 .createTodoButton {
-  display: flex;
+  display: flex; /* to align the tooltip to the center of the button */ 
   flex-direction: column;
   align-items: center;
   cursor: pointer;
@@ -35,6 +35,7 @@
   border-radius: 6px;
   opacity: 0.8;
   visibility: hidden;
+  z-index: 10;
 }
 
 .createTodoButton:hover .tooltip {

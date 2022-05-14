@@ -35,7 +35,8 @@ async function registerUser(req, res) {
       _id: user.id,
       name: user.name,
       email: user.email,
-      token: generateToken(user._id)
+      token: generateToken(user._id),
+      message: 'User successfully registered, redirecting back to login page in 3 seconds'
     });
   } else {
     res.status(400);
@@ -50,7 +51,7 @@ async function loginUser(req, res) {
   const {email, password} = req.body;
   const user = await User.findOne({email});
   if (user && (await bcrypt.compare(password, user.password))) {
-    res.json({
+    res.status(200).json({
       _id: user.id,
       name: user.name,
       email: user.email,
@@ -60,18 +61,6 @@ async function loginUser(req, res) {
     res.status(400);
     throw new Error('Invalid credentials');
   }
-}
-
-// @desc  Get user data
-// @route GET /api/users/me
-// @access Private
-async function getMe(req, res) {
-  const {_id, name, email} = await User.findById(req.user.id);
-  res.status(200).json({
-    id: _id,
-    name,
-    email
-  });
 }
 
 // Generate JWT
@@ -84,5 +73,4 @@ function generateToken(id) {
 module.exports = {
   registerUser,
   loginUser,
-  getMe
 }

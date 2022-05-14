@@ -1,9 +1,10 @@
 import React from "react";
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import get from "../utilities";
 import "./TodoSection.css"
 import TodoHeader from "./TodoHeader.js";
 import TodoList from "./TodoList.js";
-import CreateToDoPage from "./CreateToDoPage";
+import CreateToDo from "./CreateToDo";
 
 export default function TodoSection(props) {
 
@@ -42,14 +43,20 @@ export default function TodoSection(props) {
 
   if (!creatingToDo) {
     return (
-      <div className="todoSection">
-        <TodoHeader handleButtonClick={handleAddToDo}/>
-        <TodoList todoCards={todoCards} onDelete={deleteToDo}/>
-      </div>
+      <>
+        <h1>Hello {props.user.name}, what would you like to do today?</h1>
+        <div className="todoSection">
+          <TodoHeader handleButtonClick={handleAddToDo}/>
+          <TodoList todoCards={todoCards} onDelete={deleteToDo}/>
+        </div>
+      </>
   )
   } else {
     return (
-      <CreateToDoPage handleDoneClick={addToDo} handleBackClick={handleBack}/>
+      <>
+        <h1>Hello {props.user.name}, what would you like to do today?</h1>
+        <CreateToDo handleDoneClick={addToDo} handleBackClick={handleBack}/>
+      </>
     )
   }
 }

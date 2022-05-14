@@ -3,8 +3,7 @@
   align-items: center;
   background-color: var(--main-grey);
   color: white;
-  height: 4vh;
-  margin-bottom: 8vh;
+  height: 40px;
 }
 
 .left-section {

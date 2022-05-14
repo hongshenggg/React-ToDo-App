@@ -26,14 +26,13 @@ async function updateTodo(req,res) {
     res.status(400);
     throw new Error('Todo not found');
   }
-  const user = await User.findById(req.user.id);
   // Check for user
-  if (!user) {
+  if (!req.user) {
     res.status(401);
     throw new Error('User not found');
   }
   // Make sure the logged in user matches the todo user
-  if (todo.user.toString() !== user.id) {
+  if (todo.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error('User not authorized');
   }
@@ -49,14 +48,13 @@ async function deleteTodo(req,res) {
     res.status(400);
     throw new Error('Todo not found');
   }
-  const user = await User.findById(req.user.id);
   // Check for user
-  if (!user) {
+  if (!req.user) {
     res.status(401);
     throw new Error('User not found');
   }
   // Make sure the logged in user matches the todo user
-  if (todo.user.toString() !== user.id) {
+  if (todo.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error('User not authorized');
   }

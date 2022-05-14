@@ -26,7 +26,7 @@ export default function ToDoList(props) {
   function handleCardClick(id) {
     const newClickedCards = {...clickedCards};
     for (const key in newClickedCards) {
-      if (key == id) {
+      if (key === id.toString()) {
         newClickedCards[key] = !newClickedCards[key];
       } else {
         newClickedCards[key] = false;
