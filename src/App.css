@@ -2,9 +2,11 @@
 
 :root {
   --main-orange: rgb(252, 133, 64);
+  --secondary-orange: rgb(226, 89, 9);
   --main-grey: rgb(145, 145, 145);
   --secondary-grey: rgb(235, 235, 235);
   --deleteButtonRed: rgb(231, 85, 85);
+  --confirmationGreen: rgb(17, 173, 64);
   --tooltip-grey: rgb(80, 80, 80);
 }
 

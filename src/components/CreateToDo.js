@@ -1,5 +1,6 @@
 import React from "react";
 import {useState} from "react";
+import TodoHeader from "./TodoHeader";
 import "./CreateToDo.css";
 import "./TodoSection.css";
 
@@ -22,13 +23,10 @@ export default function CreateToDo(props) {
 
   return (
     <div className="todoSection">
-      <div className="createToDoTitle">Create ToDo</div>
+      <TodoHeader className="backButton" title="Create ToDo" handleButtonClick={props.handleBackClick} tooltip="Back"/>
       <input type="text" placeholder="Title of ToDo" className="todoTitleInput textBox" onChange={handleTitleChange}></input>
-      <textarea rows="2" placeholder="Description of ToDo" className="todoDescriptionText textBox" onChange={handleDescChange}></textarea> 
-      <div className="buttonsContainer">
-        <button onClick={onDone}>Done</button>
-        <button onClick={props.handleBackClick}>Back</button>
-      </div>
+      <textarea placeholder="Description of ToDo" className="todoDescriptionText textBox" onChange={handleDescChange}></textarea> 
+      <button className="doneButton" onClick={onDone}>Done</button>
     </div>
   )
 }

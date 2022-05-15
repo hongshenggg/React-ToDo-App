@@ -11,18 +11,33 @@
   font-size: 20px;
 }
 
-.createTodoButton {
+.todoHeader button {
   display: flex; /* to align the tooltip to the center of the button */ 
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  border: none;
+  position: relative;
+}
+
+.createTodoButton {
   background-image: url("../icons/add_item_icon.png");
   background-size: contain;
   height: 20px;
   width: 20px;
   background-color: var(--main-orange);
+}
+
+.backButton {
+  background-color: var(--main-orange);
+  background-image: url("../icons/close_button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 14px;
+  width: 14px;
   border: none;
-  position: relative;
+  cursor: pointer;
 }
 
 .tooltip {
@@ -38,6 +53,6 @@
   z-index: 10;
 }
 
-.createTodoButton:hover .tooltip {
+.todoHeader button:hover .tooltip {
   visibility: visible;
 }

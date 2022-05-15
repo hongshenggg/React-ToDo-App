@@ -12,7 +12,7 @@ async function createTodo(req, res) {
     description: req.body.description
   });
 
-  res.status(200).json({message: 'created todo'})
+  res.status(201).json(todo)
 }
 
 async function readTodos(req, res) {

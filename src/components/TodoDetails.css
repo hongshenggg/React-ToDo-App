@@ -10,20 +10,6 @@
   overflow-wrap: anywhere;
 }
 
-.closeButton {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background-image: url("../icons/close_button.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 14px;
-  width: 14px;
-  border: none;
-  cursor: pointer;
-}
-
 .todoDescription {
   overflow-wrap: break-word;
   overflow-y: auto;
@@ -32,18 +18,21 @@
 }
 
 .deleteButton {
-  position: relative;
-  bottom: 0;
   border: 2px solid var(--deleteButtonRed);
   border-radius: 6px;
   padding: 10px 16px;
   cursor: pointer;
   background-color: white;
   color: var(--deleteButtonRed);
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 .deleteButton:hover {
   background-color: var(--deleteButtonRed);
   color: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.deleteButton:active {
+  box-shadow: none;
 }

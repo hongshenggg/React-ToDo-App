@@ -1,31 +1,35 @@
-POST http://localhost:5000/api/users
+POST http://localhost:8000/api/users
 Content-Type: application/json
 
 {
   "name": "test",
   "email": "test@test.com",
-  "password": "123456"
+  "password": "1234"
 }
 
 ###
-POST http://localhost:5000/api/users/login
+POST http://localhost:8000/api/users/login
 Content-Type: application/json
 
 {
   "email": "test@test.com",
-  "password": "123456"
+  "password": "1234"
 }
 
 ###
-POST http://localhost:5000/api/todos
+POST http://localhost:8000/api/todos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNzYyNGJiNTBhNTZiOTA0MjYyYmU2NyIsImlhdCI6MTY1MTkxMDQ3NywiZXhwIjoxNjU0NTAyNDc3fQ.X4Co4yTNv5VlV6KDtMRRGDMatSMWXq9s-XBb6V0C3nU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2YxZWQ3NmJjMjI3ZGUyMzJhODc4MiIsImlhdCI6MTY1MjUxMzExNCwiZXhwIjoxNjU1MTA1MTE0fQ.oufBLIOMJck18ooRiCcuNR2TAQIkFtiBGGib-PQnjfg
 
 {
-  "user": "627624bb50a56b904262be67",
-  "title": "test todo 1",
-  "description": "test description 1"
+  "user": "627f1ed76bc227de232a8782",
+  "title": "test todo 2",
+  "description": "test description 2"
 }
+
+###
+GET http://localhost:8000/api/todos 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2YxZWQ3NmJjMjI3ZGUyMzJhODc4MiIsImlhdCI6MTY1MjUxMzExNCwiZXhwIjoxNjU1MTA1MTE0fQ.oufBLIOMJck18ooRiCcuNR2TAQIkFtiBGGib-PQnjfg
 
 ###
 PUT http://localhost:5000/api/todos/627628b450a56b904262be6b
