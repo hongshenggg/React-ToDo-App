@@ -1,6 +1,7 @@
 {
   "name": "todo-list",
   "version": "0.1.0",
+  "proxy": "http://localhost:8000",
   "private": true,
   "dependencies": {
     "@reach/router": "^1.3.4",
@@ -25,7 +26,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serverDev": "nodemon server/server.js",
-    "server": "node server/server.js"
+    "server": "node server/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [

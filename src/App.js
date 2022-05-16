@@ -27,7 +27,7 @@ export default function App() {
       <Navbar user={user} logout={logout}/>
       <Router>
         <AppPage user={user} path="/"/>
-        <LoginPage login={setUser} path="/login"/>
+        <LoginPage user={user} login={setUser} path="/login"/>
         <NotFoundPage default/>
       </Router>
     </div>

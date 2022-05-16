@@ -9,11 +9,10 @@ export default function LoginPage(props) {
 
   const navigate = useNavigate();
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem('user');
-    if (isLoggedIn) {
+    if (props.user) {
       navigate('/');
     }
-  }, [])
+  }, [props.user])
 
   if (!register) {
     return (
