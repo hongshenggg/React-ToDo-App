@@ -26,7 +26,7 @@ export default function CreateToDo(props) {
       <TodoHeader className="backButton" title="Create ToDo" handleButtonClick={props.handleBackClick} tooltip="Back"/>
       <input type="text" placeholder="Title of ToDo" className="todoTitleInput textBox" onChange={handleTitleChange}></input>
       <textarea placeholder="Description of ToDo" className="todoDescriptionText textBox" onChange={handleDescChange}></textarea> 
-      <button className="doneButton" onClick={onDone}>Done</button>
+      <button className="doneButton" onClick={onDone}>Add ToDo</button>
     </div>
   )
 }
