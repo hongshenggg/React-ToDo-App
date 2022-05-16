@@ -32,10 +32,10 @@ async function registerUser(req, res) {
 
   if(user) {
     res.status(201).json({
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      token: generateToken(user._id),
+      // id: user.id,
+      // name: user.name,
+      // email: user.email,
+      // token: generateToken(user._id),
       message: 'User successfully registered, redirecting back to login page in 3 seconds'
     });
   } else {
@@ -52,14 +52,15 @@ async function loginUser(req, res) {
   const user = await User.findOne({email});
   if (user && (await bcrypt.compare(password, user.password))) {
     res.status(200).json({
-      id: user.id,
+      // id: user.id,
       name: user.name,
-      email: user.email,
-      token: generateToken(user._id)
+      // email: user.email,
+      token: generateToken(user._id),
+      message: "User successfully logged in"
     })
   } else {
     res.status(400);
-    throw new Error('Invalid credentials');
+    throw new Error('Invalid email/password');
   }
 }
 

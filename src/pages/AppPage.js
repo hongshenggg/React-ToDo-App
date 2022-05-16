@@ -1,15 +1,19 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {useNavigate} from "@reach/router";
 import "./AppPage.css";
 import TodoSection from "../components/TodoSection.js";
 
 export default function AppPage(props) {
+
   const navigate = useNavigate();
+
   useEffect(() => {
-    if (!props.user) {
+    const isLoggedIn = localStorage.getItem('user');
+    if (!props.user && !isLoggedIn) {
       navigate('/login');
-    } 
-  }, [props.user, navigate]);
+    }
+  }, [props.user])
+
 
   return (
     <div className="appContainer">

@@ -20,6 +20,7 @@ export default function LoginSection(props) {
     const data = await res.json();
     if (res.status === 200) {
       props.login(data);
+      localStorage.setItem('user', JSON.stringify(data));
       navigate('/');
     } else {
       setMessage(data.message);
@@ -30,7 +31,7 @@ export default function LoginSection(props) {
     <>
       <h1>Login</h1>
       {message ? <p className='message'>{message}</p> : <></>}
-      <form>
+      <form onSubmit={login}>
         <div>
           <label htmlFor='email'>Email: </label>
           <input 
@@ -55,7 +56,7 @@ export default function LoginSection(props) {
             }}
           />
         </div>
-        <button type='submit' onClick={e => login(e)}>Log In</button>
+        <button type='submit'>Log In</button>
       </form>
     </>
   )
