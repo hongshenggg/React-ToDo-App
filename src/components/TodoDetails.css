@@ -20,7 +20,8 @@
 .deleteButton {
   border: 2px solid var(--deleteButtonRed);
   border-radius: 6px;
-  padding: 10px 16px;
+  font-weight: bold;
+  padding: 10px;
   cursor: pointer;
   background-color: white;
   color: var(--deleteButtonRed);

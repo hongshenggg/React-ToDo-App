@@ -18,19 +18,23 @@ export default function LoginPage(props) {
   if (!register) {
     return (
       <div className='userInputContainer'>
-        <LoginSection login={props.login}/>
-        <button onClick={() => {
-          setRegister(true);
-        }}>Register</button>
+        <div className='inputSection'>
+          <LoginSection login={props.login}/>
+          <button onClick={() => {
+            setRegister(true);
+          }}>Don't have an account? Click here to create one</button>
+        </div>
       </div>
     )
   } else {
     return (
       <div className='userInputContainer'>
-        <RegisterSection setRegister={setRegister}/>
-        <button onClick={() => {
-          setRegister(false);
-        }}>Log In</button>
+        <div className='inputSection'>
+          <RegisterSection setRegister={setRegister}/>
+          <button onClick={() => {
+            setRegister(false);
+          }}>Already have an account? Click here to log in</button>
+        </div>
       </div>
     )
   }

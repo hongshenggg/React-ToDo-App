@@ -6,7 +6,69 @@
   margin-top: 80px;
 }
 
-.userInputContainer input:focus {
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 0 2em 1.4em;
+  height: fit-content;
+}
+
+.inputSection form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.inputSection form input {
+  box-sizing: border-box;
+  width: 400px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid var(--secondary-grey);
+}
+
+.inputSection form button {
+  width: 100%;
+  border: 2px solid var(--main-orange);
+  border-radius: 8px;
+  padding: 1em;
+  color: var(--main-orange);
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  margin-bottom: 1em;
+}
+
+.inputSection form button:hover {
+  color: white;
+  background-color: var(--main-orange);
+}
+
+.inputSection input:focus {
   outline: none;
   box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+}
+
+.inputSection button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.inputSection button:hover {
+  color: var(--tooltip-grey);
+}
+
+.userInputContainer h1 {
+  margin-bottom: 0;
+}
+
+.message {
+  color: var(--deleteButtonRed);
+  height: 1.4em;
 }

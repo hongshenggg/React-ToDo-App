@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import {post} from "../utilities";
-import "./RegisterSection.css";
 
 function RegisterSection(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [passwordMatch, setPasswordMatch] = useState(true);
   const [message, setMessage] = useState('');
 
   async function register(e) {
@@ -25,20 +23,19 @@ function RegisterSection(props) {
         setTimeout(() => props.setRegister(false), 3000);
       }
     } else {
-      setPasswordMatch(false);
+      setMessage('Passwords do not match');
     }
   }
 
   return (
     <>
       <h1>Register</h1>
-      {message ? <p className='message'>{message}</p> : <></>}
-      {passwordMatch ? <></> : <p className='message'>Passwords do not match</p>}
-      <form>
+      {message ? <p className='message'>{message}</p> : <p className='message'></p>}
+      <form onSubmit={register}>
         <div>
-            <label htmlFor='name'>Name: </label>
             <input 
               type="text"
+              placeholder='Enter name'
               required
               name='name'
               id='name'
@@ -48,9 +45,9 @@ function RegisterSection(props) {
             />
           </div>
         <div>
-          <label htmlFor='email'>Email: </label>
           <input 
             type="text"
+            placeholder='Enter email'
             required
             name='email'
             id='email'
@@ -60,9 +57,9 @@ function RegisterSection(props) {
           />
         </div>
         <div>
-          <label htmlFor='password'>Password: </label>
           <input
             type="password"
+            placeholder='Enter password'
             required
             name='password'
             id='password'
@@ -72,9 +69,9 @@ function RegisterSection(props) {
           />
         </div>
         <div>
-          <label htmlFor='confirmPassword'>Confirm Password: </label>
           <input
             type="password"
+            placeholder='Confirm password'
             required
             name='password'
             id='confirmPassword'
@@ -83,7 +80,7 @@ function RegisterSection(props) {
             }}
           />
         </div>
-        <button type='submit' onClick={register}>Register</button>
+        <button type='submit'>REGISTER</button>
       </form>
     </>
   )

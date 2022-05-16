@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import "./LoginSection.css";
 import {post} from "../utilities";
 import {useNavigate} from "@reach/router";
 
@@ -30,12 +29,12 @@ export default function LoginSection(props) {
   return (
     <>
       <h1>Login</h1>
-      {message ? <p className='message'>{message}</p> : <></>}
+      {message ? <p className='message'>{message}</p> : <p className='message'></p>}
       <form onSubmit={login}>
         <div>
-          <label htmlFor='email'>Email: </label>
           <input 
             type="text"
+            placeholder='Enter email'
             required
             name='email'
             id='email'
@@ -45,9 +44,9 @@ export default function LoginSection(props) {
           />
         </div>
         <div>
-          <label htmlFor='password'>Password: </label>
           <input
             type="password"
+            placeholder='Enter password'
             required
             name='password'
             id='password'
@@ -56,7 +55,7 @@ export default function LoginSection(props) {
             }}
           />
         </div>
-        <button type='submit'>Log In</button>
+        <button type='submit'>LOG IN</button>
       </form>
     </>
   )
