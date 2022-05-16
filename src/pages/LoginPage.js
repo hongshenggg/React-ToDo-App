@@ -9,7 +9,7 @@ export default function LoginPage(props) {
   if (!register) {
     return (
       <div className='userInputContainer'>
-        <LoginSection setUser={props.setUser}/>
+        <LoginSection login={props.login}/>
         <button onClick={() => {
           setRegister(true);
         }}>Register</button>

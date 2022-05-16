@@ -9,12 +9,16 @@ import {Router} from "@reach/router";
 export default function App() {
   const [user, setUser] = useState();
 
+  function logout() {
+    setUser(null);
+  }
+
   return (
     <div>
-      <Navbar/>
+      <Navbar user={user} logout={logout}/>
       <Router>
         <AppPage user={user} path="/"/>
-        <LoginPage setUser={setUser} path="/login"/>
+        <LoginPage login={setUser} path="/login"/>
         <NotFoundPage default/>
       </Router>
     </div>

@@ -1,12 +1,27 @@
 .navbar {
   display: flex;
   align-items: center;
-  background-color: var(--main-grey);
-  color: white;
-  height: 40px;
+  justify-content: space-between;
+  background-color: var(--secondary-grey);
+  padding: 0.4em 1.4em;
 }
 
 .left-section {
   font-size: 20px;
-  margin-left: 20px;
+  font-weight: bold;
+}
+
+.logout-button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  transition: 0.2s;
+  background: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  color: var(--tooltip-grey);
 }

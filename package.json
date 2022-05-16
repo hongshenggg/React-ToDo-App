@@ -8,7 +8,6 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
     "bcryptjs": "^2.4.3",
-    "concurrently": "^7.1.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.18.0",
@@ -26,7 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serverDev": "nodemon server/server.js",
-    "dev": "concurrently \"start\" \"serverDev\""
+    "server": "node server/server.js"
   },
   "eslintConfig": {
     "extends": [

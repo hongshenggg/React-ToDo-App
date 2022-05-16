@@ -19,7 +19,7 @@ export default function LoginSection(props) {
     const res = await post('/users/login', params);
     const data = await res.json();
     if (res.status === 200) {
-      props.setUser(data);
+      props.login(data);
       navigate('/');
     } else {
       setMessage(data.message);
