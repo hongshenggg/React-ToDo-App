@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./TodoList.css";
 import TodoCard from "./TodoCard.js";
+import Loading from "./Loading";
 
 export default function ToDoList(props) {
 
@@ -47,7 +48,7 @@ export default function ToDoList(props) {
 
   return (
     <ol className="todoList">
-      {items}
+      {props.isLoading? <Loading/> : items}
     </ol>
   )
 }

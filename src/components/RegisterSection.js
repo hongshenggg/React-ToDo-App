@@ -32,54 +32,46 @@ function RegisterSection(props) {
       <h1>Register</h1>
       {message ? <p className='message'>{message}</p> : <p className='message'></p>}
       <form onSubmit={register}>
-        <div>
-            <input 
-              type="text"
-              placeholder='Enter name'
-              required
-              name='name'
-              id='name'
-              onChange={e => {
-                setName(e.target.value);
-              }}
-            />
-          </div>
-        <div>
-          <input 
-            type="text"
-            placeholder='Enter email'
-            required
-            name='email'
-            id='email'
-            onChange={e => {
-              setEmail(e.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            placeholder='Enter password'
-            required
-            name='password'
-            id='password'
-            onChange={e => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            placeholder='Confirm password'
-            required
-            name='password'
-            id='confirmPassword'
-            onChange={e => {
-              setConfirmPassword(e.target.value);
-            }}
-          />
-        </div>
+        <input 
+          type="text"
+          placeholder='Enter name'
+          required
+          name='name'
+          id='name'
+          onChange={e => {
+            setName(e.target.value);
+          }}
+        />
+        <input 
+          type="text"
+          placeholder='Enter email'
+          required
+          name='email'
+          id='email'
+          onChange={e => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          type="password"
+          placeholder='Enter password'
+          required
+          name='password'
+          id='password'
+          onChange={e => {
+            setPassword(e.target.value);
+          }}
+        />
+        <input
+          type="password"
+          placeholder='Confirm password'
+          required
+          name='password'
+          id='confirmPassword'
+          onChange={e => {
+            setConfirmPassword(e.target.value);
+          }}
+        />
         <button type='submit'>REGISTER</button>
       </form>
     </>

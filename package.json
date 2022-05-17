@@ -25,9 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clientDev": "react-scripts start",
+    "clientDev": "PORT=3000 react-scripts start",
     "serverDev": "nodemon server/server.js",
-    "server": "node server/server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "eslintConfig": {

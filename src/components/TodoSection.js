@@ -11,11 +11,14 @@ export default function TodoSection(props) {
   const [creatingToDo, setCreatingToDo] = useState(false);
   const [message, setMessage] = useState('');
   const [todoCards, setToDoCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function getTodos() {
+      setIsLoading(true);
       const res = await get('/todos', {user: props.user});
       const todos = await res.json();
+      setIsLoading(false);
       setToDoCards(todos);
     }
     if (props.user) {
@@ -81,7 +84,7 @@ export default function TodoSection(props) {
           {message ? <p className="message">{message}</p> : <></>}
           <div className="todoSection">
             <TodoHeader className="createTodoButton" title="ToDos" handleButtonClick={handleAddToDo} tooltip="Create Todo"/>
-            <TodoList todoCards={todoCards} onDelete={deleteToDo}/>
+            <TodoList todoCards={todoCards} onDelete={deleteToDo} isLoading={isLoading}/>
           </div>
         </>
     )
